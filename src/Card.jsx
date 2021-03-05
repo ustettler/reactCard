@@ -1,17 +1,32 @@
 import * as React from 'react';
+import './Card.css';
+import Animal from './Animal';
 
 
 export default function Card() {
+    const elephant = new Animal(
+        'Elefant', 'placeholder.png', 3.3, 6000, 70, 1, 40
+    );
     return (
     <div className="card">
-    <h1>Elefant</h1>
+    <h1>{elephant.name}</h1>
     <img alt="Elefant" height="200" width="200"
-    src={`${process.env.PUBLIC_URL}/placeholder.png`} />
+    src={`${process.env.PUBLIC_URL}/${elephant.image}`}
+    height="200" width="200" />
     <table>
     <tbody>
-    <tr><td>Grösse:</td><td>3.3m</td></tr>
-    <tr><td>Gewicht:</td><td>3300 Kg</td></tr>
-    <tr><td>Alter:</td><td>33</td></tr>
+    {Object.keys(Animal.properties).map(property =>  {
+    const animalProperty = Animal.properties[property];
+    return (
+    <tr key={property}>
+    <td>{animalProperty.label}</td>
+    <td>
+    {elephant[property]}&nbsp;
+    {animalProperty.unit}
+    </td>
+    </tr>
+    );
+    })}
     </tbody>
     </table>
     </div>
