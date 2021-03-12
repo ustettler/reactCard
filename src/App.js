@@ -1,15 +1,8 @@
-import React, { Component } from 'react';
-import Card from './Card.jsx';
+import React from 'react';
 import './App.css';
+import Game from './Game.jsx';
 
-export default class App extends Component {
-  render (){
-  return (
-   <div>
-  <h1> Supertrumpf </h1>
-  <Card />
-  </div>
-  );
-}
+export default function App() {
+  return <Game titel="Supertrumpf" />
 }
 
