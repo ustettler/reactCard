@@ -3,6 +3,6 @@ import './App.css';
 import Game from './Game.jsx';
 
 export default function App() {
-  return <Game titel="Supertrumpf" />
+  return <Game title="Supertrumpf" />
 }
 

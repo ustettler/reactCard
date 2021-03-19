@@ -10,3 +10,7 @@ h1 {
     display: flex;
     justify-content: space-around;
 }
+
+tr:nth-child(2n-1).active, .active {
+    background-color: yellow;
+}
